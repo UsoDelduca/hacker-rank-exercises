@@ -1,14 +1,28 @@
-// Camel Case is a naming style common in many programming languages. In Java, method and variable names typically start with a lowercase letter, with all subsequent words starting with a capital letter (example: startThread). Names of classes follow the same pattern, except that they start with a capital letter (example: BlueCar).
-
-// Your task is to write a program that creates or splits Camel Case variable, method, and class names.
-
-// Input Format
-
-// Each line of the input file will begin with an operation (S or C) followed by a semi-colon followed by M, C, or V followed by a semi-colon followed by the words you'll need to operate on.
-// The operation will either be S (split) or C (combine)
-// M indicates method, C indicates class, and V indicates variable
-// In the case of a split operation, the words will be a camel case method, class or variable name that you need to split into a space-delimited list of words starting with a lowercase letter.
-// In the case of a combine operation, the words will be a space-delimited list of words starting with lowercase letters that you need to combine into the appropriate camel case String. Methods should end with an empty set of parentheses to differentiate them from variable names.
-// Output Format
-
-// For each input line, your program should print either the space-delimited list of words (in the case of a split operation) or the appropriate camel case string (in the case of a combine operation).
+function processData(input) {
+  //Check the operation (S or C)
+  if (input[0] === 'S') {
+    //check when there is an Upper case letter
+    //split the words where the Upper case letter is
+    //return a string separated by a space and Lower case
+  }
+  if (input[0] === 'C') {
+    //Check for M, C or V
+    if (input[2] === 'M') {
+      //check where the following word starts
+      //make the firts letter of the following word Upper case
+      //add a pair of parenthesis at the end
+      //return the method name as a string
+    }
+    if (input[2] === 'V') {
+      //check where the following word starts
+      //make the firts letter of the following word Upper case
+      //return the variable name as a string
+    }
+    if (input[2] === 'C') {
+      //check where the first word starts
+      //check where the following words start
+      //make the firts letter of the following word Upper case
+      //return the class name as a string
+    }
+  }
+}
