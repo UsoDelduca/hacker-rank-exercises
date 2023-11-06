@@ -2,27 +2,31 @@ function breakingRecords(scores) {
   // Set array length (number of games)
 
   let n = scores.length
-  // start a counter
   let minPoints = 0
   let maxPoints = 0
+  // Find the min amount of points
+  let min = scores[0]
+  // Find the max amount of points
+  let max = scores[0]
+
+  // Create the result array
+  let result = []
+
+  // loop through the array to find the Min and the Max points
   for (let i = 0; i <= n; i++) {
-    // Find the min amount of points
-    let minScore = scores[i]
-    // Find the max amount of points
-    let maxScore = scores[i]
-    if (scores[i + 1] < scores[i]) {
-      scores[i + 1] = minScore
+    if (scores[i] < min) {
+      min = scores[i]
       minPoints++
     }
 
-    if (scores[i + 1] > scores[i]) {
-      scores[i + 1] = maxScore
+    if (scores[i] > max) {
+      max = scores[i]
       maxPoints++
     }
-
-    // count how many times she broke the record for min points
-    console.log(`Round ${i}: `, minPoints, maxPoints)
   }
+  // count how many times she broke the record for min points
+  result.push(minPoints, maxPoints)
+  console.log(result)
 }
 
 breakingRecords([10, 24, 35, 20, 11, 9, 23, 43, 21, 19, 12, 10, 5, 22])
