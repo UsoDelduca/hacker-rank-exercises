@@ -32,6 +32,11 @@ C;M;white sheet of paper
 
 S;V;pictureFrame
 
+S;V;iPad
+C;M;mouse pad
+C;C;code swarm
+S;C;OrangeHighlighter
+
 ## Sample Output
 
 plastic cup
