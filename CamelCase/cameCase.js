@@ -9,11 +9,11 @@ function processData(input) {
     if (input[2] !== 'M') {
       let trimInput = input.substring(4, input.length)
       let splitInput = trimInput.split(/(?=[A-Z])/)
-      return splitInput.join(' ').toLowerCase()
+      return console.log(splitInput.join(' ').toLowerCase())
     }
     let trimInput = input.substring(4, input.length - 2)
     let splitInput = trimInput.split(/(?=[A-Z])/)
-    return splitInput.join(' ').toLowerCase()
+    return console.log(splitInput.join(' ').toLowerCase())
   }
   if (input[0] === 'C') {
     //Check for M, C or V
@@ -39,13 +39,13 @@ function processData(input) {
       }
       if (input[2] === 'M') {
         const result = trimInput + '()'
-        return result
+        return console.log(result)
       }
       if (input[2] === 'V') {
         //check where the following word starts
         //make the firts letter of the following word Upper case
         //return the variable name as a string
-        return trimInput
+        return console.log(trimInput)
       }
       if (input[2] === 'C') {
         //check where the first word starts
@@ -53,7 +53,7 @@ function processData(input) {
         //make the firts letter of the following word Upper case
         //return the class name as a string
         const result = trimInput[0].toUpperCase() + trimInput.slice(1)
-        return result
+        return console.log(result)
       }
       if (i == trimInput.length) {
         break
@@ -62,7 +62,7 @@ function processData(input) {
   }
 }
 
-console.log('S;V: ', processData('S;V;iPad'))
-console.log('C;M: ', processData('C;M;mouse pad'))
-console.log('C;C :', processData('C;C;code swarm'))
-console.log('S;C: ', processData('S;C;OrangeHighlighter'))
+processData('S;V;iPad')
+processData('C;M;mouse pad')
+processData('C;C;code swarm')
+processData('S;C;OrangeHighlighter')
