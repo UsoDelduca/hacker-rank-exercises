@@ -9,11 +9,11 @@ function processData(input) {
     if (input[2] !== 'M') {
       let trimInput = input.substring(4, input.length)
       let splitInput = trimInput.split(/(?=[A-Z])/)
-      return console.log(splitInput.join(' ').toLowerCase())
+      return splitInput.join(' ').toLowerCase()
     }
     let trimInput = input.substring(4, input.length - 2)
     let splitInput = trimInput.split(/(?=[A-Z])/)
-    return console.log(splitInput.join(' ').toLowerCase())
+    return splitInput.join(' ').toLowerCase()
   }
   if (input[0] === 'C') {
     //Check for M, C or V
@@ -38,25 +38,22 @@ function processData(input) {
         i++
       }
       if (input[2] === 'M') {
-        console.log('Case C;M: I am in!!!')
         const result = trimInput + '()'
-        console.log(result)
+        return result
       }
       if (input[2] === 'V') {
-        console.log('Case C;V: I am in!!!')
         //check where the following word starts
         //make the firts letter of the following word Upper case
         //return the variable name as a string
-        console.log(trimInput)
+        return trimInput
       }
       if (input[2] === 'C') {
-        console.log('Case C;C: I am in!!!')
         //check where the first word starts
         //check where the following words start
         //make the firts letter of the following word Upper case
         //return the class name as a string
         const result = trimInput[0].toUpperCase() + trimInput.slice(1)
-        console.log(result)
+        return result
       }
       if (i == trimInput.length) {
         break
@@ -65,4 +62,7 @@ function processData(input) {
   }
 }
 
-processData('C;C;coffee machine')
+console.log('S;V: ', processData('S;V;iPad'))
+console.log('C;M: ', processData('C;M;mouse pad'))
+console.log('C;C :', processData('C;C;code swarm'))
+console.log('S;C: ', processData('S;C;OrangeHighlighter'))
