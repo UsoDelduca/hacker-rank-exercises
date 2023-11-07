@@ -6,8 +6,11 @@ function processData(input) {
     //split the words where the Upper case letter is
     //remove the parenthesis
     //return a string separated by a space and Lower case
-    console.log('Case S: I am in!!!')
-
+    if (input[2] !== 'M') {
+      let trimInput = input.substring(4, input.length)
+      let splitInput = trimInput.split(/(?=[A-Z])/)
+      return console.log(splitInput.join(' ').toLowerCase())
+    }
     let trimInput = input.substring(4, input.length - 2)
     let splitInput = trimInput.split(/(?=[A-Z])/)
     return console.log(splitInput.join(' ').toLowerCase())
@@ -20,6 +23,28 @@ function processData(input) {
       //make the firts letter of the following word Upper case
       //add a pair of parenthesis at the end
       //return the method name as a string
+      let trimInput = input.substring(4, input.length)
+      let i = 0
+      while (true) {
+        i = 0
+        while (i < trimInput.length) {
+          if (trimInput[i] == ' ') {
+            let charArray = [...trimInput]
+            charArray[i + 1] = charArray[i + 1].toUpperCase()
+            trimInput = ''
+            for (let k = 0; k < charArray.length; k++) {
+              if (k != i) trimInput += charArray[k]
+            }
+            break
+          }
+          i++
+        }
+        if (i == trimInput.length) {
+          break
+        }
+      }
+      const result = trimInput + '()'
+      console.log(result)
     }
     if (input[2] === 'V') {
       console.log('Case C;V: I am in!!!')
@@ -37,4 +62,4 @@ function processData(input) {
   }
 }
 
-processData('S;M;plasticCupIsNotNice()')
+processData('C;M;white sheet of paper')
