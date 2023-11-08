@@ -1,16 +1,16 @@
 function lonelyinteger(a) {
   // Write your code here
-  let n = a.length
-
-  for (let i = 0; i < n; i++) {
-    for (let j = 1; j < n; j++) {
-      if (a[i] === a[j]) {
-        console.log(`it's a match!!! ${a[i]}, ${a[j]}`)
+  const [lonely] = a
+    .sort((a, b) => a - b)
+    .reduce((acc, curr) => {
+      if (!acc.includes(curr)) {
+        acc.push(curr)
       } else {
-        return console.log(a[i])
+        acc.pop()
       }
-    }
-  }
+      return acc
+    }, [])
+  return console.log(lonely)
 }
 
 lonelyinteger([1, 2, 3, 4, 3, 2, 1])
